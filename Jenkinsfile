@@ -71,7 +71,7 @@ def notify(String context, String status) {
 
     def buildUrl = env.BUILD_URL
     def jobNameSplit = JOB_NAME.tokenize('/') as String[]
-    def projectName = jobNameSplit[0]
+    def projectName = Util.rawEncode(jobNameSplit[0])
     def blueBuildUrl = buildUrl.replace("job/${projectName}", "blue/organizations/jenkins/${projectName}")
     blueBuildUrl = blueBuildUrl.replace("job/${env.BRANCH_NAME}", "detail/${env.BRANCH_NAME}")
 

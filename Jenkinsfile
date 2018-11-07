@@ -7,6 +7,7 @@
  * Pipeline: GitHub Plugin
  * Kubernetes Plugin
  */
+import hudson.Util;
 
 // Some constants...
 
